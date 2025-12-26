@@ -1,0 +1,47 @@
+{
+  "name": "dunya-restaurant-website",
+  "version": "1.0.0",
+  "description": "DUNYA Restaurant Website - A modern, responsive restaurant website built with TypeScript",
+  "main": "dist/script.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc && npm run copy-assets",
+    "copy-assets": "mkdir -p dist/assets/images && cp src/*.html dist/ && cp src/*.css dist/ && cp -r src/assets/* dist/assets/ 2>/dev/null || true",
+    "dev": "npm run build && concurrently \"tsc --watch\" \"live-server dist --port=3000\"",
+    "start": "npm run build && live-server dist --port=3000",
+    "type-check": "tsc --noEmit",
+    "watch": "tsc --watch",
+    "serve": "live-server dist --port=3000"
+  },
+  "keywords": [
+    "restaurant",
+    "website",
+    "typescript",
+    "responsive",
+    "dunya",
+    "lebanese",
+    "food"
+  ],
+  "author": "DUNYA Restaurant",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "concurrently": "^8.2.2",
+    "live-server": "^1.2.2",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
