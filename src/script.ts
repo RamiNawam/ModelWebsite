@@ -43,14 +43,14 @@ class MenuDashboard {
                 { name: "Beef Shawarma", description: "Tender marinated beef wrapped in fresh pita with our signature sauce" },
                 { name: "Chicken Shawarma", description: "Juicy grilled chicken with herbs and spices in warm pita bread" }
             ],
-            imagePlaceholder: "Shawarma Image"
+            imagePlaceholder: "assets/images/dunyapics/beef.jpg,assets/images/dunyapics/chicken.jpg"
         },
         falafel: {
             title: "Falafel Station",
             items: [
                 { name: "Classic Falafel", description: "Crispy chickpea fritters with tahini sauce and fresh vegetables" }
             ],
-            imagePlaceholder: "Falafel Image"
+            imagePlaceholder: "assets/images/dunyapics/falafel.jpeg"
         },
         sides: {
             title: "Sides & Refreshments",
@@ -59,14 +59,21 @@ class MenuDashboard {
                 { name: "Golden Fries", description: "Crispy seasoned fries served with our special dipping sauce" },
                 { name: "Homemade Ice Tea", description: "Refreshing brewed tea with a hint of mint and lemon" }
             ],
-            imagePlaceholder: "Sides Image"
+            imagePlaceholder: "assets/images/dunyapics/DUNYA-06.jpg"
+        },
+        drinks: {
+            title: "Drinks Station",
+            items: [
+                { name: "Refreshing Beverages", description: "A variety of cold drinks and juices to complement your meal" }
+            ],
+            imagePlaceholder: "assets/images/dunyapics/download (1).jpeg"
         },
         icecream: {
             title: "Authentic Lebanese Ice Cream",
             items: [
                 { name: "Traditional Flavors", description: "Hand-churned ice cream with authentic Lebanese recipes and premium ingredients" }
             ],
-            imagePlaceholder: "Ice Cream Image"
+            imagePlaceholder: "assets/images/dunyapics/ICECREAM.jpg"
         }
     };
 
@@ -134,8 +141,18 @@ class MenuDashboard {
                 }
             });
 
-            // Update image placeholder
-            this.detailsImage.innerHTML = `<span>${menuStation.imagePlaceholder}</span>`;
+            // Update image
+            if (station === 'shawarma') {
+                const images = menuStation.imagePlaceholder.split(',');
+                this.detailsImage.innerHTML = `
+                    <div class="shawarma-images">
+                        <img src="${images[0]}" alt="Beef Shawarma" class="menu-image">
+                        <img src="${images[1]}" alt="Chicken Shawarma" class="menu-image">
+                    </div>
+                `;
+            } else {
+                this.detailsImage.innerHTML = `<img src="${menuStation.imagePlaceholder}" alt="${menuStation.title}" class="menu-image">`;
+            }
 
             // Smooth scroll to details
             if (this.stationDetails) {
@@ -292,7 +309,7 @@ class Gallery {
         },
         {
             id: 7,
-            url: 'assets/images/dunyapics/fgh.jpeg',
+            url: 'assets/images/dunyapics/DUNYA-56.jpg',
             span: 'span-2-3'
         }
     ];

@@ -198,6 +198,27 @@ html {
     margin-bottom: 0;
 }
 
+.restaurant-image {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.resto-pic {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: high-quality;
+}
+
 /* Shawarma Status Section */
 .hero-status {
     text-align: center;
@@ -377,11 +398,6 @@ html {
     transform: translateY(-5px);
 }
 
-.card-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    display: block;
-}
 
 .dashboard-card h3 {
     font-family: 'Playfair Display', serif;
@@ -533,22 +549,38 @@ html {
 
 .image-placeholder {
     width: 100%;
-    height: 300px;
-    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    min-height: 300px;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #6c757d;
-    font-size: 1.1rem;
-    font-weight: 500;
-    border: 2px dashed #ced4da;
-    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
-.image-placeholder:hover {
-    border-color: #000;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+.menu-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: high-quality;
+}
+
+.shawarma-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+.shawarma-images .menu-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
 }
 
 /* Gallery Section */
@@ -713,9 +745,6 @@ html {
         min-height: 140px;
     }
     
-    .card-icon {
-        font-size: 2rem;
-    }
     
     .dashboard-card h3 {
         font-size: 1rem;
@@ -786,6 +815,15 @@ html {
     
     .hero-about {
         padding: 1.5rem;
+    }
+    
+    .restaurant-image {
+        margin-top: 1.5rem;
+    }
+    
+    .shawarma-images {
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
     
     .hero-status {
